@@ -61,21 +61,13 @@ public class Main {
 
             // Fasta File parsing and adding entries to Entry List
             manager.parseFastaFile(args[0], type.toString());
-            // manager.parseFastaFile("C:/Users/pfeif/Desktop/fasta_test2.txt", "DNA");
-            // manager.parseFastaFile("C:/Users/pfeif/Desktop/fasta_test_peptide.txt", "PEPTIDE");
-
-
 
 
             // Perform calculations
 
-            //manager.performCalculations(type.toString());
-            //manager.performCalculations("PEPTIDE");
-            // manager.performCalculations(type.toString(), args[2]);
             manager.performCalculationsThreads(type.toString(), args[2], numThreads);
 
             // Fasta File writing
-            // Method tbd
             manager.writeFastaFile(args[1], args[2]);
 
 
@@ -83,29 +75,6 @@ public class Main {
             // Get every entry from FastaManager instance manager
             ArrayList<FastaEntryDna> entriesDna = manager.getDnaEntries();
             ArrayList<FastaEntryAminoAcid> entriesPeptide = manager.getAaEntries();
-
-            // Print attribute ID and sequence with for-loop from
-            // every entry out of entries (DnaEntry example file)
-            //for (FastaEntryDna entry : entriesDna) {
-              //  System.out.println("ID: " + entry.getId() + "Sequence: " + entry.getSequence());
-                //System.out.println("Sequence: " + entry.getSequence());
-            //}
-
-            // Print attribute ID and sequence with for-loop from
-            // every entry out of entries (AminoAcidEntry example file)
-            //for (FastaEntryAminoAcid entry : entriesPeptide){
-              //  System.out.println("ID: " + entry.getId());
-              //  System.out.println("Sequence: " + entry.getSequence());
-              //  System.out.println("Hat geklappt!");
-            //}
-
-            // Print getter and setter methods of AminoAcidEntry Objects
-            //for (FastaEntryAminoAcid entry: entriesPeptide){
-              //  System.out.println("c count: " + entry.getcCount());
-              //  System.out.println("y count: " + entry.getyCount());
-              //  System.out.println("d count: " + entry.getdCount());
-              //  System.out.println("h count: " + entry.gethCount());
-            //}
 
 
         } catch (FileNotFoundException e) {

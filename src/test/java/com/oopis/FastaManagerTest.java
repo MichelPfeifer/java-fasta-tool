@@ -22,7 +22,9 @@ public class FastaManagerTest {
 
     @Test
     public void testParseFastaFile_ValidFileDna() throws IOException {
-        fastaManager.parseFastaFile("C:/Users/pfeif/Desktop/fasta_test_Kopie_v5Kopie.txt", "DNA");
+        fastaManager.parseFastaFile(
+                "/home/michel/IdeaProjects/java-fasta-tool/test_data/test_fasta_dna_1.fasta",
+                "DNA");
         ArrayList<FastaEntryDna> dnaEntries = fastaManager.getDnaEntries();
         assertEquals(4, dnaEntries.size());
     }
@@ -30,14 +32,18 @@ public class FastaManagerTest {
 
     @Test
     public void testParseFastaFile_ValidFileRna() throws IOException {
-        fastaManager.parseFastaFile("C:/Users/pfeif/Desktop/fasta_test_v2_rna.txt", "RNA");
+        fastaManager.parseFastaFile(
+                "/home/michel/IdeaProjects/java-fasta-tool/test_data/test_fasta_rna_1.fasta",
+                "RNA");
         ArrayList<FastaEntryRna> rnaEntries = fastaManager.getRnaEntries();
         assertEquals(2, rnaEntries.size());
     }
 
     @Test
     public void testParseFastaFile_ValidFilePeptide() throws IOException {
-        fastaManager.parseFastaFile("C:/Users/pfeif/Desktop/fasta_test_peptide.txt", "PEPTIDE");
+        fastaManager.parseFastaFile(
+                "/home/michel/IdeaProjects/java-fasta-tool/test_data/test_fasta_peptide_1.fasta",
+                "PEPTIDE");
         ArrayList<FastaEntryAminoAcid> aaEntries = fastaManager.getAaEntries();
         assertEquals(3, aaEntries.size());
     }

@@ -11,6 +11,19 @@ public class FastaEntryDnaTest {
         double actualGCContent = fastaEntryDna.calculateGCContent();
         assertEquals(expectedGCContent, actualGCContent, 0.01);
     }
+    // Erstelle Testmethode in Testklasse zu jeder normalen Methode in normaler Klasse
+    // Immer public void weil Testmethode einfach nur passen soll
+    @Test
+    public void testCalculateGCContentTwo(){
+        // Immer Objekt der Klasse erstellen
+        FastaEntryDna fastaEntryDna = new FastaEntryDna("test_ID", "ACTGACTGACTG", "DNA");
+        // Expected angeben
+        double expectedGCContent = 50.0;
+        // Actual berechnen mit Methode
+        double actualGCContent = fastaEntryDna.calculateGCContent();
+        // Auf Gleichheit prüfen
+        assertEquals(expectedGCContent, actualGCContent, 0.01);
+    }
 
     @Test
     public void testCalculateMolecularWeight() {
